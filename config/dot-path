@@ -1,0 +1,17 @@
+# Custom file, picked up by dotfiles, ok to modify
+# If linked properly per the setup instructions changes to this file are
+# reflected after a terminal restart, and setup scripts need not be re-executed.
+# when the path is double quoted, don't escape the spaces.
+export PATH="/usr/local/git/bin:$HOME/shell/bin:/Applications/Araxis Merge.app/Contents/Utilities:$PATH"
+
+
+# consider the following paths from old pc:
+#./node_modules/.bin:
+#/usr/local/opt/ruby/bin:
+#/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/bin:
+#/usr/local/apache-maven/apache-maven-3.2.5/bin:
+#
+
+# Git install instructions say, but I was not able to
+#sudo mv /usr/bin/git /usr/bin/git-system
+# so I had to get the system git later in the path

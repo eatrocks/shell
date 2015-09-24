@@ -1,0 +1,1 @@
+echo hdiutil makehybrid -iso -joliet -o dest.iso source.cdr

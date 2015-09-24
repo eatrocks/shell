@@ -1,0 +1,5 @@
+misc. useful commands
+hexdump - to look at line ending characters 0a 0d carriage return line feed or vice versa
+md5
+
+trash is from http://hasseg.org/trash/
