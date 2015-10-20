@@ -26,4 +26,16 @@ Do not touch `~/bin`, `~/init`, or any of the `~/.xyz` files that also exist in 
 
 I did not run .osx, but lots of the the things in there look compelling. Do not run .osx, there are locale specific informations, and I DO NOT want all of his changes.  So run the ones you want manually and add those to your setup.sh.
 
-When I was done, Terminal was still white. So I copied the `Basic` profile and changed the background to Tungsten, and the font to Magnesium, bold to Mercury, size to 14, selection to Licorice and set this new profile to `Default`. In the general tab I set Terminal to start up to a new window with the profile I just configured. I also set new windows to open with the `Default Profile` in the `Default Working Directory` and new tabs to open with the `Default Profile` in the `Same Working Directory`.
+When I was done, Terminal was still white. So I copied the `Basic` profile and changed the 
+- background to Tungsten
+- font to Magnesium
+- bold to Mercury
+- size to 14
+- selection to Licorice
+- set this new profile to `Default`
+- check use bright colors for bold text
+
+In the general tab I 
+- set Terminal to start up to a new window with the profile I just configured
+- set new windows to open with the `Default Profile` in the `Default Working Directory`
+- new tabs to open with the `Default Profile` in the `Same Working Directory`

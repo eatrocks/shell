@@ -4,7 +4,7 @@
 
 . ~/shell/z/z.sh
 
-# My custom prompt, less info than Mathias’s prompt (see .bash_prompt)
+# My custom prompt, less info than Mathias’s prompt (see his .bash_prompt)
 PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\w"; # working directory
@@ -12,3 +12,17 @@ PS1+="\$(prompt_git \"${white} on ${green}\")"; # Git repository details
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
+
+# http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
+# http://geoff.greer.fm/lscolors/
+# Note: folders with tags (extended attributes) have an @ symbol after the permissions
+# and show up with a different color, not sure how to control that color.
+export CLICOLOR=1
+export LSCOLORS=Hxfxcxdxbxegedabagacad
+
+# Adding the -F flag to the ls alias, like the l, la, and lds aliases, see .aliases
+# -F Display a slash (`/') immediately after each pathname that is a directory, an asterisk
+# (`*') after each that is executable, an at sign (`@') after each symbolic link, an equals
+# sign (`=') after each socket, a percent sign (`%') after each whiteout, and a vertical bar
+# (`|') after each that is a FIFO.
+alias ls="command ls -FG "
