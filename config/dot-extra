@@ -26,3 +26,8 @@ export LSCOLORS=Hxfxcxdxbxegedabagacad
 # sign (`=') after each socket, a percent sign (`%') after each whiteout, and a vertical bar
 # (`|') after each that is a FIFO.
 alias ls="command ls -FG "
+
+# Admin VPN for LDS Church
+alias vpn="sudo openconnect -b https://vpn2.ldschurch.org/internalsms"
+
+# TODO alias a command that finds the openconnect PID and runs kill -int xxxxx
