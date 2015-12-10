@@ -2,6 +2,11 @@
 
 # Shell setup script
 
+# TODO
+# turn off "Use smart quotes and dashes" in system preferences | keyboard | text
+# add replace aliases (unless they are already there) in system preferences | keyboard | text
+# currently json | JSON, omw | On my way! (which is a default one)
+
 # git configuration
 git config --global user.name "Bruce Campbell"
 git config --global user.email "campbellbd@ldschurch.org"
@@ -34,3 +39,5 @@ sudo chmod -R g+w /usr/local
 echo 'You may need to manually disable 802.1X automatic connection'
 
 echo 'Now call the dotfiles setup script... cd dotfiles && source bootstrap.sh'
+
+echo 'And consider deleting ~/brew.sh   not sure why dotfiles puts it there'
