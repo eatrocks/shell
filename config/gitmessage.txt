@@ -1,0 +1,9 @@
+# All comments are stripped, empty message aborts the commit
+# Subject, 50 characters, 72 hard max ------50->|
+# Sentence case, no trailing period, if applied, this commit will...
+
+
+# One blank line between subject and body
+# Body, 72 characters so git can indent and stay under 80 --------72->|
+# Explain why vs. how, let the source explain how
+# Continue imperative mood in the body (as if giving a command)

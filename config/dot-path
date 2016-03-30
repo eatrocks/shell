@@ -2,7 +2,7 @@
 # If linked properly per the setup instructions changes to this file are
 # reflected after a terminal restart, and setup scripts need not be re-executed.
 # when the path is double quoted, don't escape the spaces.
-export PATH="/usr/local/git/bin:$HOME/shell/bin:/Applications/Araxis Merge.app/Contents/Utilities:$PATH"
+export PATH="/usr/local/git/bin:$HOME/shell/bin:/Applications/Araxis Merge.app/Contents/Utilities:/Users/campbellbd/shell/bin:$PATH"
 
 
 # consider the following paths from old pc:

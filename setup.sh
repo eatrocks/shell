@@ -7,6 +7,11 @@
 # add replace aliases (unless they are already there) in system preferences | keyboard | text
 # currently json | JSON, omw | On my way! (which is a default one)
 
+# .npmrc
+npm set email "eatrocks@gmail.com"
+npm set init.author.name "Bruce Campbell"
+npm set init.author.email "eatrocks@gmail.com"
+
 # git configuration
 git config --global user.name "Bruce Campbell"
 git config --global user.email "campbellbd@ldschurch.org"
@@ -17,6 +22,9 @@ git config --global url."https://".insteadOf git://
 # for primer (fatal: unable to connect to github.com Operation timed out)
 # bower ECMDERR       Failed to execute "git ls-remote --tags --heads git://github.com/jquery/jquery.git", exit code of #128 fatal: unable to connect to github.com: github.com[0: 192.30.252.131]: errno=Operation timed out
 git config --global url.https://github.com/.insteadOf git://github.com/
+
+# Custom git commit message template... http://chris.beams.io/posts/git-commit/
+git config --global commit.template ~/shell/gitmessage.txt
 
 # link custom dot files from home to this folder.
 /bin/rm ~/.extra

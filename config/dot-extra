@@ -30,10 +30,15 @@ alias ls="command ls -FG "
 # Admin VPN for LDS Church
 alias vpn="sudo openconnect https://vpn2.ldschurch.org/internalsms"
 
-# Airport Wireless Survey use -I flag for signal strenght calculation
+# Airport Wireless Survey use -I flag for signal strength calculation
 # Signal (RSSI) - Noise... e.g. -35-(-95)=60
 # https://discussions.apple.com/thread/3886087?tstart=0
 # you can also alt-click on the wireless icon for the numbers
 alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport
+
+# Git helpers
+alias status="git status "
+alias pull="git pull "
+alias branch="git checkout -b "
 
 # TODO alias a command that finds the openconnect PID and runs kill -int xxxxx
