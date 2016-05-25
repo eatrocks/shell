@@ -1,9 +1,29 @@
-# All comments are stripped, empty message aborts the commit
+########## RULES ############
+# Capitalize the subject line
+# Limit the subject line to 50 characters
+# Do not end the subject line with a period
+# Use the imperative mood in the subject line
+# Separate subject from body with a blank line
+# Wrap the body at 72 characters
+# Use the body to explain what and why vs. how
+#
+#
+##### SUBJECT ######
 # Subject, 50 characters, 72 hard max ------50->|
-# Sentence case, no trailing period, if applied, this commit will...
+# If you find it difficult to fit the subject into 50 characters --
+# your commit is probably too big :-(
+# Example imperative verbs: Fix, Add, Remove, Refine, Improve, Refactor
+# If applied, this commit will...
 
 
-# One blank line between subject and body
+##### DESCRIPTION #####
 # Body, 72 characters so git can indent and stay under 80 --------72->|
-# Explain why vs. how, let the source explain how
-# Continue imperative mood in the body (as if giving a command)
+# Elaborate what (if needed)
+# Explain why (business reasons / developer logic, etc)
+# Don’t explain how — code does that:
+
+#
+#
+# See http://chris.beams.io/posts/git-commit/ for background
+#
+# Lines beginning with # are stripped from the git log

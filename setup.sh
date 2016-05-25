@@ -24,7 +24,7 @@ git config --global url."https://".insteadOf git://
 git config --global url.https://github.com/.insteadOf git://github.com/
 
 # Custom git commit message template... http://chris.beams.io/posts/git-commit/
-git config --global commit.template ~/shell/gitmessage.txt
+git config --global commit.template ~/shell/config/gitmessage.txt
 
 # link custom dot files from home to this folder.
 /bin/rm ~/.extra
