@@ -41,4 +41,8 @@ alias status="git status "
 alias pull="git pull "
 alias branch="git checkout -b "
 
+# Holy crap... why oh why would anyone want to sign their commits...
+# source of the setting is dotfiles but I can't find where, so disable...
+git config --global commit.gpgsign false
+
 # TODO alias a command that finds the openconnect PID and runs kill -int xxxxx

@@ -42,3 +42,13 @@ In the general tab I
 - set Terminal to start up to a new window with the profile I just configured
 - set new windows to open with the `Default Profile` in the `Default Working Directory`
 - new tabs to open with the `Default Profile` in the `Same Working Directory`
+
+## LDS Mobile Device Management
+
+Self Service, Sophos, Jamf
+
+Sources: Dan Smith and Michael Jasper
+
+- modify `/etc/hosts` to include `0.0.0.0 macmdm.ldschurch.org`
+- remove jamf big brother software https://jamfnation.jamfsoftware.com/article.html?id=153
+- remove Sophos antivirus (need more info here to bypass the tamper protection/password) https://community.sophos.com/kb/en-us/14179
