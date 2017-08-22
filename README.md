@@ -26,13 +26,20 @@ Do not touch `~/bin`, `~/init`, or any of the `~/.xyz` files that also exist in 
 
 I did not run .osx, but lots of the the things in there look compelling. Do not run .osx, there are locale specific informations, and I DO NOT want all of his changes.  So run the ones you want manually and add those to your setup.sh.
 
-When I was done, Terminal was still white. So I copied the `Basic` profile and changed the
+When I was done, Terminal was still white. So...
+For a black terminal... I copied the `Basic` profile and changed the
 - background to Lead
 - font to Magnesium
 - bold to Mercury
 - size to 14
 - selection to Licorice
-- set this new profile to `Default`
+- set this new profile to `Default` (click the `default` button in the list on the left)
+- check use bright colors for bold text
+
+For a silver and highly translucent window copy the `Silver Aero` profile and changed the
+- size to 14
+- selection to Lemon
+- set this new profile to `Default` (click the `default` button in the list on the left)
 - check use bright colors for bold text
 
 In the general tab I
