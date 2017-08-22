@@ -48,4 +48,7 @@ echo 'You may need to manually disable 802.1X automatic connection'
 
 echo 'Now call the dotfiles setup script... cd dotfiles && source bootstrap.sh'
 
-echo 'And consider deleting ~/brew.sh   not sure why dotfiles puts it there'
+# Not sure why dotfiles put ~/brew.sh into the home directory.
+# In ~/.bashrc, the `[ -n "$PS1" ] && ...` short circuits the call to .bash_profile for gui apps like IDEA
+# On a Mac, when .bashrc is present the .bash_profile is not called, but is called otherwise I think
+echo 'Then delete ~/brew.sh (to be clean) and ~/.bashrc (so IntelliJ works)'
