@@ -49,3 +49,14 @@ Sources: Dan Smith and Michael Jasper
 - modify `/etc/hosts` to include `0.0.0.0 macmdm.ldschurch.org`
 - remove jamf big brother software https://jamfnation.jamfsoftware.com/article.html?id=153
 - remove Sophos antivirus (need more info here to bypass the tamper protection/password) https://community.sophos.com/kb/en-us/14179
+
+## Adobe Trojan Horse Analytics
+
+This is on most LDS sites, and I'm sure many others. This `hosts` file change and
+the one for mobile device management are not automated.
+
+Modify `/etc/hosts`, add
+
+```
+0.0.0.0 assets.adobedtm.com
+```
