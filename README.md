@@ -12,9 +12,6 @@ Run the following setups
 - ./setup.sh
 - cd dotfiles && source bootstrap.sh
 
-Install cf into bin/ (if this is a new install)
-- `cd ~/shell && ./bin/cf-update.sh`
-
 Restart your terminal
 
 ## Notes
