@@ -46,3 +46,10 @@ alias branch="git checkout -b "
 git config --global commit.gpgsign false
 
 # TODO alias a command that finds the openconnect PID and runs kill -int xxxxx
+
+source ~/.cubs
+
+# git auto-completion per https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks   see also setup.sh
+if [ -f ~/shell/bin/git-completion.bash ]; then
+  source ~/shell/bin/git-completion.bash
+fi
