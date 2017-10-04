@@ -2,3 +2,4 @@ dotfiles
 z
 .DS_Store
 bin/cf
+config/dot-cubs

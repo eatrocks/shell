@@ -62,7 +62,7 @@ sudo chmod -R g+w /usr/local
 # if [ ! -f $AUTO_DIR/git-completion.bash ]; then
 #   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ./bin/git-completion.bash && sudo mv ./bin/git-completion.bash $AUTO_DIR/git-completion.bash
 # fi
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/shell/bin/git-completion.bash.temp && mv ~/shell/bin/git-completion.bash.temp ~/shell/bin/git-completion.bash
+curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/shell/bin/git-completion.bash.temp && mv ~/shell/bin/git-completion.bash.temp ~/shell/bin/git-completion.bash
 
 
 # 802.1X prompt when making network connection (un & )
