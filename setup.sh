@@ -33,6 +33,11 @@ ln -s ~/shell/config/dot-extra ~/.extra
 /bin/rm ~/.path
 ln -s ~/shell/config/dot-path ~/.path
 
+# link VS Code settings from home to this config folder
+# https://code.visualstudio.com/docs/getstarted/settings
+/bin/rm $HOME/Library/Application Support/Code/User/settings.json
+ln -s ~/shell/config/vscode-settings.json $HOME/Library/Application Support/Code/User/settings.json
+
 # the dot-cubs file has passwords, see 1password for the contents
 if [ -f ~/shell/config/dot-cubs ]; then
   /bin/rm ~/.cubs
