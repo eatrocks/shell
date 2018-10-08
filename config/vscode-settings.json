@@ -23,8 +23,6 @@
 	},
 	"editor.formatOnSave": true,
 	"prettier.singleQuote": false,
-	// this was flagged as unrecognized
-	//"validate.enable": false,
 	"git.autofetch": true,
 	"telemetry.enableTelemetry": false
 }
