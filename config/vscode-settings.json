@@ -1,39 +1,38 @@
 // Place your settings in this file to overwrite the default settings
 // "validate.enable": false     https://code.visualstudio.com/Docs/languages/javascript
 {
-  "files.autoSave": "onFocusChange",
-  "window.zoomLevel": 1,
-  "editor.tabSize": 2,
-  "workbench.iconTheme": "material-icon-theme",
-  "search.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "node_modules": true,
-    "dist": true,
-    ".happypack": true,
-    ".vscode": true,
-    "npm-debug.log": true
-  },
-  "files.exclude": {
-    ".vscode": true
-  },
-  "editor.formatOnSave": true,
-  "prettier.singleQuote": false,
-
-  // from Jasper, not sure what this buys you
-  //    "file.associations": {
-  //        ".js" : "jsx"
-  //    },
-  // this was flagged as unrecognized
-  //"validate.enable": false,
-
-  // better completion in jsx per...
-  // https://github.com/Microsoft/vscode/issues/29992
-  "emmet.useNewEmmet": true,
-  "emmet.showExpandedAbbreviation": "always",
-  "git.autofetch": true,
-  "telemetry.enableTelemetry": false //https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
+	"files.autoSave": "onFocusChange",
+	"window.zoomLevel": 0,
+	"editor.tabSize": 2,
+	"workbench.iconTheme": "material-icon-theme",
+	"search.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"node_modules": true,
+		"dist": true,
+		".happypack": true,
+		".vscode": true,
+		"npm-debug.log": true,
+		"**/static/*": true
+	},
+	"files.exclude": {
+		".vscode": true
+	},
+	"editor.formatOnSave": true,
+	"prettier.singleQuote": false,
+	// from Jasper, not sure what this buys you
+	//    "file.associations": {
+	//        ".js" : "jsx"
+	//    },
+	// this was flagged as unrecognized
+	//"validate.enable": false,
+	// better completion in jsx per...
+	// https://github.com/Microsoft/vscode/issues/29992
+	"emmet.useNewEmmet": true,
+	"emmet.showExpandedAbbreviation": "always",
+	"git.autofetch": true,
+	"telemetry.enableTelemetry": false //https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
 }
