@@ -23,10 +23,6 @@
 	},
 	"editor.formatOnSave": true,
 	"prettier.singleQuote": false,
-	// from Jasper, not sure what this buys you
-	//    "file.associations": {
-	//        ".js" : "jsx"
-	//    },
 	// this was flagged as unrecognized
 	//"validate.enable": false,
 	// better completion in jsx per...
