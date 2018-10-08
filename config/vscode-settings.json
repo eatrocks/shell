@@ -34,5 +34,5 @@
 	"emmet.useNewEmmet": true,
 	"emmet.showExpandedAbbreviation": "always",
 	"git.autofetch": true,
-	"telemetry.enableTelemetry": false //https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting
+	"telemetry.enableTelemetry": false
 }
