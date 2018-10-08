@@ -25,10 +25,6 @@
 	"prettier.singleQuote": false,
 	// this was flagged as unrecognized
 	//"validate.enable": false,
-	// better completion in jsx per...
-	// https://github.com/Microsoft/vscode/issues/29992
-	"emmet.useNewEmmet": true,
-	"emmet.showExpandedAbbreviation": "always",
 	"git.autofetch": true,
 	"telemetry.enableTelemetry": false
 }
