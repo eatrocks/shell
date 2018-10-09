@@ -1,29 +1,38 @@
 ## Overview
 
-This is my OS X bash shell setup which is primarily the [dotfiles from Mathias Bynens](https://github.com/mathiasbynens/dotfiles) and the ["z" (jump around) command from rupa](https://github.com/rupa/z).
+This is my MacOS setup project. It started out as shell setup, but grew
+to include other setup tasks. The shell setup is based primarily on the
+[dotfiles from Mathias Bynens](https://github.com/mathiasbynens/dotfiles) 
+and the ["z" (jump around) command from rupa](https://github.com/rupa/z).
 
 ## Setup
 
 Clone repositories
 
-* Clone this repository into ~/ as shell... `cd ~ && git clone https://github.com/eatrocks/shell.git`
-* Clone z... `cd ~/shell && git clone https://github.com/rupa/z.git`
-* Clone dotfiles... `cd ~/shell && git clone https://github.com/mathiasbynens/dotfiles.git`
+* Clone this repository into ~/repos as shell... `mkdir ~/repos && cd ~/repos && git clone https://github.com/eatrocks/shell.git`
+* Clone z... `cd ~/repos/ && git clone https://github.com/rupa/z.git`
+* Clone dotfiles... `cd ~/repos/ && git clone https://github.com/mathiasbynens/dotfiles.git`
 
 Run the following setups
 
-* ./setup.sh
-* cd dotfiles && source bootstrap.sh
+* cd ~/repos/shell && ./setup.sh
+* cd ~/repos/dotfiles && source bootstrap.sh
 
 Restart your terminal
 
 ## Notes
 
-After a clean install of El Capitan the only dot file was .bash_history, and that probably only existed after I used the shell, so the dotfiles install did not overwrite anything. That isn't to say that some other application install didn't add or modify a dot file which could be overwritten.
+After a clean install of El Capitan the only dot file was `.bash_history`, 
+and that probably only existed after I used the shell, so the dotfiles 
+install did not overwrite anything. That isn't to say that some other 
+application install didn't add or modify a dot file which could be overwritten.
 
-The `bootstrap.sh` copies it's dotfiles into your home directory with a special rsync command that resets permissions.
+The `bootstrap.sh` copies it's dotfiles into your home directory with 
+a special rsync command that resets permissions.
 
-Do not touch `~/bin`, `~/init`, or any of the `~/.xyz` files that also exist in dotfiles directly. Instead modify these files which are linked from ~/ by the setup script...
+Do not touch `~/bin`, `~/init`, or any of the dot files in the home 
+directory that also exist in dotfiles directly. Instead modify these 
+files which are linked from ~/ by the setup script...
 
 * ~/shell/config/dot-path for ~/.path
 * ~/shell/config/dot-extra for ~/.extra
@@ -31,12 +40,15 @@ Do not touch `~/bin`, `~/init`, or any of the `~/.xyz` files that also exist in 
 VS Code settings are also linked by the setup script
 per https://code.visualstudio.com/docs/getstarted/settings
 
-* ~/shell/config/vscode-settings.json for $HOME/Library/Application Support/Code/User/settings.json
+* ~/repos/shell/config/vscode-settings.json for $HOME/Library/Application Support/Code/User/settings.json
 
-I did not run .osx, but lots of the the things in there look compelling. Do not run .osx, there are locale specific informations, and I DO NOT want all of his changes. So run the ones you want manually and add those to your setup.sh.
+I did not run .osx, but lots of the the things in there look compelling. 
+I also did not run .osx; there are locale specific informations, and I 
+DO NOT want all of his changes. So run the ones you want manually and 
+add those to your setup.sh.
 
 When I was done, Terminal was still white. So...
-For a black terminal... I copied the `Basic` profile and changed the
+For a black terminal... I copied the `Basic` profile and changed the. (This was for High Sierra. Changes pending for Maveriks wich introduced the dark mode)
 
 * background to Lead
 * font to Magnesium
@@ -59,15 +71,58 @@ In the general tab I
 * set new windows to open with the `Default Profile` in the `Default Working Directory`
 * new tabs to open with the `Default Profile` in the `Same Working Directory`
 
-## LDS Mobile Device Management
+## Disable Device Enrollment Notification
 
 Self Service, Sophos, Jamf
 
-Sources: Dan Smith and Michael Jasper
+If your serial number was registered for device management and the management apps 
+including Self Service, Sophos, and Jamf were installed, you should wipe it clean 
+(format the disk) and install the OS from scrath without connecting to a network.
 
-* modify `/etc/hosts` to include `0.0.0.0 macmdm.ldschurch.org`
-* remove jamf big brother software https://jamfnation.jamfsoftware.com/article.html?id=153
-* remove Sophos antivirus (need more info here to bypass the tamper protection/password) https://community.sophos.com/kb/en-us/14179
+Once the OS installation is completed you can connect to a network. You will eventually
+be prompted with a Device Enrollment Notification. Use the instructions found [here](https://gist.github.com/sghiassy/a3927405cf4ffe81242f4ecb01c382ac). In summary...
+
+### Restart the Mac in Recovery Mode by holding `Comment-R` during restart
+
+#### Open Terminal in the recovery screen and type
+
+```
+csrutil disable
+```
+
+Restart computer
+
+### Edit `com.apple.ManagedClient.enroll.plist`
+
+In the terminal, type
+
+```
+sudo vi /System/Library/CoreServices/ManagedClient.app/Contents/Resources/com.apple.ManagedClient.enroll.plist
+```
+
+change
+
+```
+<key>com.apple.ManagedClient.enroll</key>
+```
+
+from true to false
+
+### Restart the Mac in Recovery Mode by holding `Comment-R` during restart
+
+#### Open Terminal in the recovery screen and type
+
+```
+csrutil enable
+```
+
+Restart computer so that the changes take effect
+
+## Antivirus & Drive Encryption
+
+We agreed to encrypt the drive and install Antivirus in exchange for permission
+to bypass device management. Do that now. Consider Malware Bytes, or get Sophos
+from the antivirus team or TSR's. Use Apple's drive encryption.
 
 ## Adobe Trojan Horse Analytics
 

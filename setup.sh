@@ -4,53 +4,70 @@
 
 # TODO
 # turn off "Use smart quotes and dashes" in system preferences | keyboard | text
-# add replace aliases (unless they are already there) in system preferences | keyboard | text
-# currently json | JSON, omw | On my way! (which is a default one)
+# status: currently trying system without making this change (10/2018)
 
-# .npmrc
+echo "Installing Homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Installing global Homebrew packages"
+homebrew_packages=(
+	"bash"
+	"bash-completion"
+	"git"
+)
+for homebrew_package in "${homebrew_packages[@]}"; do
+	brew install "$homebrew_package"
+done
+
+echo "Configuring the system to use the new bash"
+# http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/
+# Add the new shell to the list of allowed shells
+sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+# Change to the new shell
+chsh -s /usr/local/bin/bash 
+
+echo "Configuring npm (.npmrc)"
 npm set email "eatrocks@gmail.com"
 npm set init.author.name "Bruce Campbell"
 npm set init.author.email "eatrocks@gmail.com"
 
-# git configuration
+echo "Configuring git"
 git config --global user.name "Bruce Campbell"
 git config --global user.email "campbellbd@ldschurch.org"
-# primer prerequisite
-git config --global url.https://github.com/.insteadOf git://github.com/
 # tell git to use https instead of git (if your firewall blocks git protocol)
-git config --global url."https://".insteadOf git://
+# git config --global url."https://".insteadOf git://
 # for primer (fatal: unable to connect to github.com Operation timed out)
 # bower ECMDERR       Failed to execute "git ls-remote --tags --heads git://github.com/jquery/jquery.git", exit code of #128 fatal: unable to connect to github.com: github.com[0: 192.30.252.131]: errno=Operation timed out
-git config --global url.https://github.com/.insteadOf git://github.com/
+#git config --global url.https://github.com/.insteadOf git://github.com/
 
 # Custom git commit message template... http://chris.beams.io/posts/git-commit/
-git config --global commit.template ~/shell/config/gitmessage.txt
+git config --global commit.template ~/repos/shell/config/gitmessage.txt
 
 # link custom dot files from home to this folder.
 /bin/rm ~/.extra
-ln -s ~/shell/config/dot-extra ~/.extra
+ln -s ~/repos/shell/config/dot-extra ~/.extra
 
 /bin/rm ~/.path
-ln -s ~/shell/config/dot-path ~/.path
+ln -s ~/repos/shell/config/dot-path ~/.path
 
 # link VS Code settings from home to this config folder
 # https://code.visualstudio.com/docs/getstarted/settings
 /bin/rm $HOME/Library/Application Support/Code/User/settings.json
-ln -s ~/shell/config/vscode-settings.json $HOME/Library/Application Support/Code/User/settings.json
+ln -s ~/repos/shell/config/vscode-settings.json $HOME/Library/Application Support/Code/User/settings.json
 
 # the dot-cubs file has passwords, see 1password for the contents
-if [ -f ~/shell/config/dot-cubs ]; then
+if [ -f ~/repos/shell/config/dot-cubs ]; then
   /bin/rm ~/.cubs
-  ln -s ~/shell/config/dot-cubs ~/.cubs
+  ln -s ~/repos/shell/config/dot-cubs ~/.cubs
 fi
 
 # set node permissions so sudo is not required (still use/need sudo for 'n')
-sudo chown -R $USER ~/.npm
-sudo chown -R $USER /usr/local/lib/node_modules
-
+# Status: disabled these in favor of nvm which shoud not have this problem (10/2018)
+# sudo chown -R $USER ~/.npm
+# sudo chown -R $USER /usr/local/lib/node_modules
 # perm problems with npm install with -g
-sudo chgrp -R admin /usr/local
-sudo chmod -R g+w /usr/local
+# sudo chgrp -R admin /usr/local
+# sudo chmod -R g+w /usr/local
 
 # git auto-completion per https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
 # git completion for all users requires bash 4 or higher... https://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
@@ -67,7 +84,7 @@ sudo chmod -R g+w /usr/local
 # if [ ! -f $AUTO_DIR/git-completion.bash ]; then
 #   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ./bin/git-completion.bash && sudo mv ./bin/git-completion.bash $AUTO_DIR/git-completion.bash
 # fi
-curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/shell/bin/git-completion.bash.temp && mv ~/shell/bin/git-completion.bash.temp ~/shell/bin/git-completion.bash
+curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/repos/shell/bin/git-completion.bash.temp && mv ~/repos/shell/bin/git-completion.bash.temp ~/repos/shell/bin/git-completion.bash
 
 
 # 802.1X prompt when making network connection (un & )
@@ -75,7 +92,7 @@ curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-
 # Network | choose offending adapter | Advanced | 802.1X
 echo 'You may need to manually disable 802.1X automatic connection'
 
-echo 'Now call the dotfiles setup script... cd dotfiles && source bootstrap.sh'
+echo 'Now call the dotfiles setup script... cd ../dotfiles && source bootstrap.sh'
 
 # Not sure why dotfiles put ~/brew.sh into the home directory.
 # In ~/.bashrc, the `[ -n "$PS1" ] && ...` short circuits the call to .bash_profile for gui apps like IDEA
