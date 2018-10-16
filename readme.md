@@ -42,34 +42,27 @@ per https://code.visualstudio.com/docs/getstarted/settings
 
 * ~/repos/shell/config/vscode-settings.json for $HOME/Library/Application Support/Code/User/settings.json
 
-I did not run .osx, but lots of the the things in there look compelling. 
-I also did not run .osx; there are locale specific informations, and I 
-DO NOT want all of his changes. So run the ones you want manually and 
-add those to your setup.sh.
+I did not run .macos, but lots of the the things in there look compelling. 
+There are locale specific informations, and I DO NOT want all of his changes. 
+So run the ones you want manually and add those to your setup.sh.
 
-When I was done, Terminal was still white. So...
-For a black terminal... I copied the `Basic` profile and changed the. (This was for High Sierra. Changes pending for Maveriks wich introduced the dark mode)
 
-* background to Lead
-* font to Magnesium
-* bold to Mercury
-* size to 14
-* selection to Licorice
+## Manual Terminal Tweaks
+
+This assumes dark mode in MacOS Mojave+
+I copied the `Basic` profile and changed...
+
+In the text tab...
+* size to 16 (click the change button)
+* font to Magnesium (click the box to the left of "Text")
+* bold to Mercury (click the box to the left of "Bold Text")
+* selection to Tungsten (click the box to the left of "Selection")
 * set this new profile to `Default` (click the `default` button in the list on the left)
-* check use bright colors for bold text
 
-For a silver and highly translucent window copy the `Silver Aero` profile and changed the
-
-* size to 14
-* selection to Lemon
-* set this new profile to `Default` (click the `default` button in the list on the left)
-* check use bright colors for bold text
-
-In the general tab I
+In the general tab...
 
 * set Terminal to start up to a new window with the profile I just configured
 * set new windows to open with the `Default Profile` in the `Default Working Directory`
-* new tabs to open with the `Default Profile` in the `Same Working Directory`
 
 ## Disable Device Enrollment Notification
 
