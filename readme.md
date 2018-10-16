@@ -71,27 +71,6 @@ In the general tab I
 * set new windows to open with the `Default Profile` in the `Default Working Directory`
 * new tabs to open with the `Default Profile` in the `Same Working Directory`
 
-## Temp
-
-### Edit `com.apple.ManagedClient.enroll.plist`
-
-In the terminal, type
-
-```
-sudo vi /System/Library/CoreServices/ManagedClient.app/Contents/Resources/com.apple.ManagedClient.enroll.plist
-```
-
-change
-
-```
-<key>com.apple.ManagedClient.enroll</key>
-```
-
-from true to false
-
-
-## This is the end of temp
-
 ## Disable Device Enrollment Notification
 
 Self Service, Sophos, Jamf
