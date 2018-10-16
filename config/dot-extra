@@ -27,9 +27,6 @@ export LSCOLORS=Hxfxcxdxbxegedabagacad
 # (`|') after each that is a FIFO.
 alias ls="command ls -FG "
 
-# Admin VPN for LDS Church
-alias vpn="sudo openconnect https://vpn2.ldschurch.org/internalsms"
-
 # Airport Wireless Survey use -I flag for signal strength calculation
 # Signal (RSSI) - Noise... e.g. -35-(-95)=60
 # https://discussions.apple.com/thread/3886087?tstart=0
@@ -47,9 +44,13 @@ git config --global commit.gpgsign false
 
 # TODO alias a command that finds the openconnect PID and runs kill -int xxxxx
 
-source ~/.cubs
-
 # git auto-completion per https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks   see also setup.sh
-if [ -f ~/shell/bin/git-completion.bash ]; then
-  source ~/shell/bin/git-completion.bash
+if [ -f ~/repos/shell/bin/git-completion.bash ]; then
+  source ~/repos/shell/bin/git-completion.bash
 fi
+
+# NVM per the install warning 
+# When it could not find a profile (.bashrc, .bash_profile, .zshrc, or .profile)
+# to append to it instructed me to add this manually
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

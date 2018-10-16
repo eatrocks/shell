@@ -71,26 +71,7 @@ In the general tab I
 * set new windows to open with the `Default Profile` in the `Default Working Directory`
 * new tabs to open with the `Default Profile` in the `Same Working Directory`
 
-## Disable Device Enrollment Notification
-
-Self Service, Sophos, Jamf
-
-If your serial number was registered for device management and the management apps 
-including Self Service, Sophos, and Jamf were installed, you should wipe it clean 
-(format the disk) and install the OS from scrath without connecting to a network.
-
-Once the OS installation is completed you can connect to a network. You will eventually
-be prompted with a Device Enrollment Notification. Use the instructions found [here](https://gist.github.com/sghiassy/a3927405cf4ffe81242f4ecb01c382ac). In summary...
-
-### Restart the Mac in Recovery Mode by holding `Comment-R` during restart
-
-#### Open Terminal in the recovery screen and type
-
-```
-csrutil disable
-```
-
-Restart computer
+## Temp
 
 ### Edit `com.apple.ManagedClient.enroll.plist`
 
@@ -108,15 +89,72 @@ change
 
 from true to false
 
-### Restart the Mac in Recovery Mode by holding `Comment-R` during restart
+Note: Source of info was [here](https://gist.github.com/sghiassy/a3927405cf4ffe81242f4ecb01c382ac), however this did not work. So, I found another source of info, and with some modification it worked...
 
-#### Open Terminal in the recovery screen and type
+## This is the end of temp
+
+## Disable Device Enrollment Notification
+
+Self Service, Sophos, Jamf
+
+If your serial number was registered for device management and the management apps 
+including Self Service, Sophos, and Jamf were installed, you should wipe it clean 
+(format the disk) and install the OS from scrath without connecting to a network.
+
+Once the OS installation is completed you can connect to a network. You will eventually
+be prompted with a Device Enrollment Notification. Choosing skip will only delay the 
+prompt.
+
+### Disable System Integrity Protection
+
+#### Restart the Mac in Recovery Mode by holding `Command-R` during restart
+
+#### Open Terminal from the utilities menu in the recovery screen and run
+
+```
+csrutil disable
+```
+
+You should see a success message. Restart the computer.
+
+### Move Launch Files
+
+Move or remove the ManagedClient Launch files so they are not executed on startup. 
+As of Mojave the files are...
+
+```
+/System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
+/System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+
+/System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+/System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+/System/Library/LaunchDaemons/com.apple.ManagedClient.plist
+/System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+```
+
+These commands executed from Terminal should do the trick...
+
+```
+sudo mkdir /Library/LaunchDaemonsDisabled /Library/LaunchAgentsDisabled
+sudo mv /System/Library/LaunchDaemons/com.apple.ManagedClient* /Library/LaunchDaemonsDisabled
+sudo mv /System/Library/LaunchAgents/com.apple.ManagedClient* /Library/LaunchAgentsDisabled
+```
+
+Note: The source of information was [here](https://apple.stackexchange.com/questions/216890/disable-device-enollment-notification-window), 
+however the file list was not complete for Mojave.
+
+### Re-enable System Integrity Protection
+
+#### Restart the Mac in Recovery Mode by holding `Command-R` during restart
+
+#### Open Terminal from the utilities menu in the recovery screen and run
 
 ```
 csrutil enable
 ```
 
-Restart computer so that the changes take effect
+You should see a success message. Restart computer so that the changes take effect. After these 
+changes you should not be prompted to enroll your device.
 
 ## Antivirus & Drive Encryption
 
@@ -134,3 +172,7 @@ Modify `/etc/hosts`, add
 ```
 0.0.0.0 assets.adobedtm.com
 ```
+
+## TODO: Items to automate if possible (document if not)
+
+- show the date in the menu bar (is there a cfprefs command)
