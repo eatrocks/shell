@@ -89,7 +89,6 @@ change
 
 from true to false
 
-Note: Source of info was [here](https://gist.github.com/sghiassy/a3927405cf4ffe81242f4ecb01c382ac), however this did not work. So, I found another source of info, and with some modification it worked...
 
 ## This is the end of temp
 
@@ -142,6 +141,9 @@ sudo mv /System/Library/LaunchAgents/com.apple.ManagedClient* /Library/LaunchAge
 
 Note: The source of information was [here](https://apple.stackexchange.com/questions/216890/disable-device-enollment-notification-window), 
 however the file list was not complete for Mojave.
+
+Note: Previously I followed [these instructions](https://gist.github.com/sghiassy/a3927405cf4ffe81242f4ecb01c382ac), however this did not work. The above instructions worked, and I don't think these instructions contributed but they may have so leaving this note as a reference until the above instructions are proven to work alone.
+
 
 ### Re-enable System Integrity Protection
 
