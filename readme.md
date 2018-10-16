@@ -154,6 +154,14 @@ Modify `/etc/hosts`, add
 0.0.0.0 assets.adobedtm.com
 ```
 
+## Make z.sh executable
+
+The dot-extra file sources it. Not 100% sure this is necessary.
+
+```
+chmod +x ~/repos/z/z.sh
+```
+
 ## TODO: Items to automate if possible (document if not)
 
 - show the date in the menu bar (is there a cfprefs command)

@@ -2,7 +2,7 @@
 # If linked properly per the setup instructions changes to this file are
 # reflected after a terminal restart, and setup scripts need not be re-executed.
 
-. ~/shell/z/z.sh
+. ~/repos/z/z.sh
 
 # My custom prompt, less info than Mathias’s prompt (see his .bash_prompt)
 PS1="\[\033]0;\w\007\]";
