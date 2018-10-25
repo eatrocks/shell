@@ -10,3 +10,6 @@ git config --global user.email "campbellbd@ldschurch.org"
 
 # Custom git commit message template... http://chris.beams.io/posts/git-commit/
 git config --global commit.template ~/repos/shell/config/gitmessage.txt
+
+# MacOS keychain helper
+git config --global credential.helper osxkeychain
