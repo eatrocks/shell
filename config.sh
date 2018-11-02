@@ -19,3 +19,8 @@ killall SystemUIServer
 
 echo "Configuring incognito mode"
 defaults write com.google.chrome IncognitoModeAvailability -integer 1
+
+# HIDE THE MOVE TO DROPBOX CONTEXT MENU ITEM IN FINDER
+# Dropbox must be installed first
+# https://www.dropboxforum.com/t5/Dropbox/Please-add-option-to-remove-context-menu-quot-Move-to-Dropbox/idc-p/121174/highlight/true#M44762
+/Applications/Dropbox.app/Contents/MacOS/Dropbox --move-to-dropbox=False
