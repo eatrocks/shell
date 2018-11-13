@@ -23,6 +23,12 @@
 		"npm-debug.log": true
 	},
 	"telemetry.enableTelemetry": false,
-	"window.zoomLevel": 1,
-	"workbench.iconTheme": "material-icon-theme"
+	"window.zoomLevel": 2,
+	"workbench.iconTheme": "material-icon-theme",
+	"cSpell.userWords": [
+		"browserslist",
+		"padbox",
+		"precommit",
+		"unfetch"
+	]
 }
