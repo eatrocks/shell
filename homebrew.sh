@@ -11,6 +11,8 @@ for homebrew_package in "${homebrew_packages[@]}"; do
 	brew install "$homebrew_package"
 done
 
+brew cask appcleaner
+
 echo "Configuring the system to use the new bash"
 # http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/
 # Add the new shell to the list of allowed shells
