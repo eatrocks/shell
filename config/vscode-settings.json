@@ -3,7 +3,6 @@
 	"editor.formatOnSave": true,
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 2,
-	"files.autoSave": "onFocusChange",
 	"files.exclude": {
 		".vscode": true
 	},
@@ -23,12 +22,14 @@
 		"npm-debug.log": true
 	},
 	"telemetry.enableTelemetry": false,
-	"window.zoomLevel": 2,
+	"window.zoomLevel": 1,
 	"workbench.iconTheme": "material-icon-theme",
 	"cSpell.userWords": [
 		"browserslist",
+		"ldsjs",
 		"padbox",
 		"precommit",
 		"unfetch"
-	]
+	],
+	"files.autoSave": "onFocusChange"
 }
