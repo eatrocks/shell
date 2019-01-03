@@ -159,5 +159,6 @@ chmod +x ~/repos/z/z.sh
 - show the date in the menu bar (is there a cfprefs command)
 - Turn on tab navigation to all controls:
   System Preferences -> Keyboard -> Shortcuts (radio buttons at the bottom)
-- Paste the date with a keyboard shortcut
+- Paste the date (or date with time) with a keyboard shortcut
   https://discussions.apple.com/thread/8651300
+  See ./applescript folder in this project
