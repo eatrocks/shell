@@ -12,10 +12,11 @@ for homebrew_package in "${homebrew_packages[@]}"; do
 done
 
 brew cask appcleaner
+brew cask install quicklook-json
 
 echo "Configuring the system to use the new bash"
 # http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/
 # Add the new shell to the list of allowed shells
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell
-chsh -s /usr/local/bin/bash 
+chsh -s /usr/local/bin/bash

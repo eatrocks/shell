@@ -1,7 +1,7 @@
 
 echo "Configuring git"
 git config --global user.name "Bruce Campbell"
-git config --global user.email "campbellbd@ldschurch.org"
+git config --global user.email "bruce@churchofjesuschrist.org"
 # tell git to use https instead of git (if your firewall blocks git protocol)
 # git config --global url."https://".insteadOf git://
 # for primer (fatal: unable to connect to github.com Operation timed out)

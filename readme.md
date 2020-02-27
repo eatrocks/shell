@@ -154,6 +154,19 @@ The dot-extra file sources it. Not 100% sure this is necessary.
 chmod +x ~/repos/z/z.sh
 ```
 
+## Copy Date/Time to the clipboard
+
+You can put items to the clipboard from terminal using `pbcopy`
+You can use appify
+https://mathiasbynens.be/notes/shell-script-mac-apps
+https://gist.github.com/mathiasbynens/674099
+This takes appify a bit further...
+https://github.com/subtleGradient/Appify-UI
+Had trouble with spotlight finding my apps so...
+https://www.jamf.com/jamf-nation/discussions/19351/spotlight-indexing-of-apps-built-from-scripts
+which recommended I add Info.plist or try Platypus
+https://sveinbjorn.org/platypus
+
 ## TODO: Items to automate if possible (document if not)
 
 - show the date in the menu bar (is there a cfprefs command)
@@ -162,3 +175,6 @@ chmod +x ~/repos/z/z.sh
 - Paste the date (or date with time) with a keyboard shortcut
   https://discussions.apple.com/thread/8651300
   See ./applescript folder in this project
+  Or see this alternate solution
+  https://stackoverflow.com/questions/2877741/how-to-run-a-shell-script-using-spotlight
+- This looks like a possible source of ideas... https://www.macworld.com/article/2038095/5-automator-workflows-everyone-should-have.html
