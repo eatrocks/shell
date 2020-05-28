@@ -15,6 +15,20 @@ echo "Configuring screenshots to save in Downloads"
 defaults write com.apple.screencapture location ~/Downloads
 killall SystemUIServer
 
+# Finder
+
+## Show Library folder
+chflags nohidden ~/Library
+
+## Show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
+## Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+## Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
 # CHROME
 
 echo "Configuring incognito mode"

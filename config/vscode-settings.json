@@ -3,7 +3,8 @@
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 2,
 	"files.exclude": {
-		".vscode": true
+		".vscode": true,
+		"package-lock.json": true
 	},
 	"git.autofetch": true,
 	"search.exclude": {
@@ -59,5 +60,6 @@
 	"editor.formatOnSave": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"todo-tree.highlights.enabled": true,
-	"todo-tree.tree.showScanModeButton": false
+	"todo-tree.tree.showScanModeButton": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
 }
